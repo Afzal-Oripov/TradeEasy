@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-#6*btps99*ce=x)b^&n!#xi@2dzthajyy$s@bxnnoy3+_9*3qz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -141,15 +141,16 @@ LOGOUT_URL = 'logout'
 CART_SESSION_ID = 'cart'
 
 # Настроечные параметры Stripe
-STRIPE_PUBLISHABLE_KEY = 'pk_test_51PngcpRwKPakxQ70odMqIeVkzPJwLOORkYWWWPJpXEnVfElu8kb0mGnTrevErYoQso7AY8njJefqQyz88PUAIXCJ007slvQ2Rz' # Публикуемый ключ
-STRIPE_SECRET_KEY = 'sk_test_51PngcpRwKPakxQ70MeG5dCLB6gtrVCbSrbfwO6paGCFmUIjBW4Nax8fKi1nN8XYEq26JyQXr0Gok7arXzvdTpohH00qIc8FySG' # Секретный ключ
-STRIPE_API_VERSION = '2022-08-01'
+# STRIPE_PUBLISHABLE_KEY = 'pk_test_51PngcpRwKPakxQ70odMqIeVkzPJwLOORkYWWWPJpXEnVfElu8kb0mGnTrevErYoQso7AY8njJefqQyz88PUAIXCJ007slvQ2Rz' # Публикуемый ключ
+# STRIPE_SECRET_KEY = 'sk_test_51PngcpRwKPakxQ70MeG5dCLB6gtrVCbSrbfwO6paGCFmUIjBW4Nax8fKi1nN8XYEq26JyQXr0Gok7arXzvdTpohH00qIc8FySG' # Секретный ключ
+# STRIPE_API_VERSION = '2022-08-01'
+
+
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'afzaloripov007@gmail.com'
 EMAIL_HOST_PASSWORD = 'vuym diwz ejjc pmeb'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-

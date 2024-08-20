@@ -8,8 +8,8 @@
 </head>
 
 <body>
-    <div id="header">
-        <span class="logo">TradeEasy</span>
+    <div id="header">   
+        <span class="logo"><a href="/">TradeEasy</a></span>
         {% if request.user.is_authenticated %}
         <ul class="menu">
             <li {% if section == "dashboard" %}class="selected" {% endif %}>
@@ -31,6 +31,21 @@
             <a href="{% url "login" %}">Log-in</a>
             {% endif %}
         </span>
+    </div>
+    <div id="subheader">
+        <div class="cart">
+            {% with total_items=cart|length %}
+            {% if total_items > 0 %}
+            Your cart:
+            <a href="{% url "cart:cart_detail" %}">
+                {{ total_items }} item{{ total_items|pluralize }},
+                ${{ cart.get_total_price }}
+            </a>
+            {% elif not order %}
+            {% else %}
+            {% endif %}
+            {% endwith %}
+        </div>
     </div>
     <div id="content">
         {% block content %}
